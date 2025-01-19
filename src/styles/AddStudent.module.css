@@ -1,0 +1,64 @@
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.85); /* Start slightly smaller for a smooth entrance */
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes popupClose {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85); /* End slightly smaller for a smooth exit */
+  }
+}
+
+.popupAnimation {
+  animation: popup 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) both; /* Smoother easing */
+}
+
+.popupClosing {
+  animation: popupClose 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) both; /* Same smooth easing */
+}
+
+.popup {
+  position: relative;
+  max-width: 700px;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transition for background blur */
+.bg-blur {
+  transition: backdrop-filter 0.3s ease; /* Apply smooth transition */
+  backdrop-filter: blur(0px); /* Initial state: no blur */
+}
+
+/* Add blur effect when the modal is open */
+.bg-blur-active {
+  backdrop-filter: blur(10px); /* Add blur when modal is open */
+}
+
+/* Hide the scrollbar */
+.scrollcontainer {
+  overflow-y: auto; /* Enables vertical scrolling */
+  max-height: 90vh; /* Adjust based on your layout */
+}
+
+.scrollcontainer::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in WebKit browsers */
+}
+
+.scrollcontainer {
+  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
