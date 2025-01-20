@@ -4,10 +4,10 @@ const path = require('D:/FullStackProject/Frontend');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from the dist folder
+// Serve static files from the 'dist' folder
 app.use(express.static(path.join(__dirname, 'dist')));
 
-// Fallback to index.html for SPA routing
+// Handle SPA routing (send index.html for all routes)
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
