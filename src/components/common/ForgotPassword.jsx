@@ -82,7 +82,7 @@ function ForgotPassword({ setIsSubmitting, onClosed }) {
       try {
         // Make an API call to update the password
         const response = await axios.post(
-          "https://royal-student-backend.onrender.com/api/public/session/forgotpassword", // API endpoint
+          "https://localhost:9999/api/public/session/forgotpassword", // API endpoint
           { email, password, otp }, // Data to send
           {
             headers: {
@@ -135,9 +135,8 @@ function ForgotPassword({ setIsSubmitting, onClosed }) {
 
   return (
     <div
-      className={`relative font-metropolis h-auto w-[475px] bg-white p-7 flex flex-col rounded-md shadow-lg shadow-indigo-500/40 popup ${
-        isClosing ? styles.popupClosing : styles.popupAnimation
-      } z-60`}
+      className={`relative font-metropolis h-auto w-[475px] bg-white p-7 flex flex-col rounded-md shadow-lg shadow-indigo-500/40 popup ${isClosing ? styles.popupClosing : styles.popupAnimation
+        } z-60`}
       style={{
         maxHeight: errors && Object.keys(errors).length > 0 ? "90vh" : "auto", // Scroll only if there are errors
         overflowY: errors && Object.keys(errors).length > 0 ? "auto" : "hidden", // Enable scrolling for errors

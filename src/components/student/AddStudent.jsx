@@ -51,7 +51,7 @@ const AddStudent = ({ onClosed }) => {
 
                 // Sending the form data to the backend using Axios
                 const response = await axios.post(
-                    "https://royal-student-backend.onrender.com/api/private/admin/addstudent",
+                    "http://localhost:9999/api/private/admin/addstudent",
                     {
                         name: formData.name,
                         email: formData.email,

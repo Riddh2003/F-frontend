@@ -61,7 +61,7 @@ function SendOtp({ setIsSubmitting, onClosed, onOtpSent }) {
       try {
         // Send POST request to backend
         const response = await axios.post(
-          "https://royal-student-backend.onrender.com/api/public/session/sendotp",
+          "https://localhost:9999/api/public/session/sendotp",
           { email },
           { headers: { "Content-Type": "application/json" } }
         );
@@ -115,9 +115,8 @@ function SendOtp({ setIsSubmitting, onClosed, onOtpSent }) {
 
   return (
     <div
-      className={`relative font-metropolis h-auto w-[475px] bg-white p-7 flex flex-col rounded-md shadow-lg shadow-indigo-500/40 popup ${
-        isClosing ? styles.popupClosing : styles.popupAnimation
-      } z-60`}
+      className={`relative font-metropolis h-auto w-[475px] bg-white p-7 flex flex-col rounded-md shadow-lg shadow-indigo-500/40 popup ${isClosing ? styles.popupClosing : styles.popupAnimation
+        } z-60`}
       style={{
         maxHeight: errors && Object.keys(errors).length > 0 ? "90vh" : "auto", // Enable scrolling when errors exist
         overflowY: errors && Object.keys(errors).length > 0 ? "auto" : "hidden",

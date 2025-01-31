@@ -94,7 +94,7 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
 
       // Make an API call to update the student details
       const response = await axios.put(
-        `https://royal-student-backend.onrender.com/api/private/admin/editstudent/${studentId}`,
+        `http://localhost:9999/api/private/admin/editstudent/${studentId}`,
         formData,
         {
           headers: {
@@ -148,9 +148,8 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
   return (
     <>
       <div
-        className={`h-auto w-[450px] md:w-[600px] lg:w-[700px] bg-white shadow-lg p-7 rounded-md flex flex-col gap-4 font-metropolis popup ${
-          isClosing ? styles.popupClosing : styles.popupAnimation
-        } z-50 relative ${styles.scrollcontainer}`}
+        className={`h-auto w-[450px] md:w-[600px] lg:w-[700px] bg-white shadow-lg p-7 rounded-md flex flex-col gap-4 font-metropolis popup ${isClosing ? styles.popupClosing : styles.popupAnimation
+          } z-50 relative ${styles.scrollcontainer}`}
         style={{
           maxHeight: errors && Object.keys(errors).length > 0 ? "90vh" : "auto", // Adjust height based on errors
           overflowY:
@@ -173,8 +172,8 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
           </span>
         </div>
 
-       {/* Form for student details */}
-       <div className="flex justify-between w-full gap-6">
+        {/* Form for student details */}
+        <div className="flex justify-between w-full gap-6">
           <div className="flex flex-col gap-2 w-[50%]">
             <label htmlFor="name">Name</label>
             <input
@@ -254,7 +253,7 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
               <div style={{ color: "red" }}>{errors.mobile}</div>
             )}
           </div>
-          </div>
+        </div>
 
         <div className="flex justify-between w-full gap-6">
           {/* Regularitiy, Test Performance*/}
@@ -299,11 +298,11 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
               <div style={{ color: "red" }}>{errors.testPerformance}</div>
             )}
           </div>
-          </div>
+        </div>
 
 
         <div className="flex justify-between w-full gap-6">
-        <div className="flex flex-col gap-2 w-[50%]">
+          <div className="flex flex-col gap-2 w-[50%]">
             <label htmlFor="communication">Communication</label>
             <select
               id="communication"
@@ -345,7 +344,7 @@ const EditStudent = ({ setIsSubmitting, onClosed, studentData, onRefresh }) => {
             )}
           </div>
 
-          </div>
+        </div>
 
         <button
           onClick={handleFormSubmit}

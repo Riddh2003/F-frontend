@@ -46,7 +46,7 @@ function Student() {
     try {
       setLoading(true);
       const data = await fetchApi(
-        `https://royal-student-backend.onrender.com/api/private/admin/getStudentByName?characters=${query}`
+        `http://localhost:9999/api/private/admin/getStudentByName?characters=${query}`
       );
       setSearchResults(data); // Update search results
       setShowDropdown(true); // Show dropdown
@@ -63,7 +63,7 @@ function Student() {
     try {
       setLoading(true);
       const data = await fetchApi(
-        `https://royal-student-backend.onrender.com/api/private/admin/getStudentById/${studentId}`
+        `http://localhost:9999/api/private/admin/getStudentById/${studentId}`
       );
       setSelectedStudent(data); // Update selected student details
       setShowDropdown(false); // Hide dropdown
@@ -142,7 +142,7 @@ function Student() {
       {loading && console.log("Loading spinner")}
       {loading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-30">
-            <div className="w-10 h-10 border-4 border-blue-500 rounded-full animate-spin border-t-transparent"></div>
+          <div className="w-10 h-10 border-4 border-blue-500 rounded-full animate-spin border-t-transparent"></div>
         </div>
       )}
     </div>

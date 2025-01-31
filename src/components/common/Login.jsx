@@ -27,7 +27,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function Login({ setLoading , setShowSendOtpModal }) {
+function Login({ setLoading, setShowSendOtpModal }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
@@ -62,7 +62,7 @@ function Login({ setLoading , setShowSendOtpModal }) {
       setLoading(true); // Show loader
       try {
         const response = await axios.post(
-          "https://royal-student-backend.onrender.com/api/public/session/login",
+          "http://localhost:9999/api/public/session/login",
           { email, password },
           {
             headers: {
